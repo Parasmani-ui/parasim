@@ -1,7 +1,7 @@
-import users from './data/users';
-import _gameData from './data/game_data';
-import gameState from './data/game_state';
-import caseStudy from './data/case_study';
+import users from './data/users.js';
+import _gameData from './data/game_data.js';
+import gameState from './data/game_state.js';
+import caseStudy from './data/case_study.js';
 
 const allQuartersData = {
     '0': JSON.parse(JSON.stringify(_gameData)),

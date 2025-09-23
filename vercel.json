@@ -1,9 +1,20 @@
 {
-  "buildCommand": "cd app && npm run build",
-  "devCommand": "cd app && npm start",
-  "installCommand": "cd app && npm install",
-  "outputDirectory": "app/build",
-  "framework": "create-react-app",
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
   "env": {
     "REACT_APP_API_URL": "https://parasimback.onrender.com",
     "REACT_APP_UPLOAD_URL": "https://parasimback.onrender.com",

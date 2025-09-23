@@ -54,3 +54,7 @@ server
 server/
 server_backup/
 server_backup
+
+vercel-app-subdirectory-fix.md
+vercel-dashboard-config-fix.md
+

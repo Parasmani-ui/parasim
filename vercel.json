@@ -1,0 +1,14 @@
+{
+  "buildCommand": "cd app && npm run build",
+  "devCommand": "cd app && npm start",
+  "installCommand": "cd app && npm install",
+  "outputDirectory": "app/build",
+  "framework": "create-react-app",
+  "env": {
+    "REACT_APP_API_URL": "https://parasimback.onrender.com",
+    "REACT_APP_UPLOAD_URL": "https://parasimback.onrender.com",
+    "REACT_APP_SOCKET_URL": "https://parasimback.onrender.com",
+    "REACT_APP_PUBLIC_URL": "https://parasimback.onrender.com/",
+    "REACT_APP_USE_STUBS": "false"
+  }
+}

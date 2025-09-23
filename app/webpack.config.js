@@ -5,8 +5,10 @@ module.exports = {
   mode: 'production',
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
     path: __dirname + '/build',
+    publicPath: '/',
+    clean: true,
   },
   optimization: {
     minimize: true,
@@ -15,6 +17,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      inject: 'body',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+      },
     })
   ],
   module: {

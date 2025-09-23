@@ -66,7 +66,8 @@ const App = () => {
   );
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+// Set favicon and title immediately (DOM is ready when webpack script loads)
+const setupPageMetadata = () => {
   const faviconPath = gameConfig.favicon;
 
   let faviconLink = document.querySelector("link[rel~='icon']");
@@ -81,12 +82,37 @@ document.addEventListener("DOMContentLoaded", function() {
   let title = document.querySelector("title");
   if (!title) {
     title = document.createElement("title");
-    
     title.innerText = gameConfig.title;
     document.head.appendChild(title);
+  } else {
+    title.innerText = gameConfig.title;
   }
-});
+};
 
-const domNode = document.getElementById('root');
-const root = createRoot(domNode);
-root.render(<App />);
+// Run immediately
+setupPageMetadata();
+
+// Add error handling for production debugging
+try {
+  const domNode = document.getElementById('root');
+  if (!domNode) {
+    throw new Error('Root element not found');
+  }
+  
+  const root = createRoot(domNode);
+  root.render(<App />);
+  
+  console.log('React app rendered successfully');
+} catch (error) {
+  console.error('Error rendering React app:', error);
+  // Fallback: show error message on screen
+  const errorDiv = document.createElement('div');
+  errorDiv.innerHTML = `
+    <div style="padding: 20px; color: red; font-family: Arial, sans-serif;">
+      <h2>Application Error</h2>
+      <p>Failed to load the application: ${error.message}</p>
+      <p>Please check the browser console for more details.</p>
+    </div>
+  `;
+  document.body.appendChild(errorDiv);
+}

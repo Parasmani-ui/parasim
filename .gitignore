@@ -20,9 +20,16 @@ CODEBASE_ANALYSIS_REPORT.md
 
 dump/
 
-app/
-app
 
 server/_temp/create_users.js
 
 README.md
+
+MONGODB_ATLAS_SETUP.md
+final-setup-instructions.md
+render-atlas-config.md
+render-env-setup.md
+upload-script.bat
+upload-script.sh
+upload-to-atlas.md
+fix-render-cors-issue.md

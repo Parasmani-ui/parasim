@@ -66,3 +66,5 @@ render-env-setup.md
 render-env-setup.md
 revert-to-working-deployment.md
 server/package.json
+
+vercel-build-fix.md

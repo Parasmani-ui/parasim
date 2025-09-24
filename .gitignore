@@ -57,3 +57,12 @@ vercel-app-subdirectory-fix.md
 vercel-dashboard-config-fix.md
 
 babel-conflict-fix.md
+debug-white-screen.md
+white-screen-fix.md
+module-resolution-fix.md
+revert
+render-cors-issue-fix.md
+render-env-setup.md
+render-env-setup.md
+revert-to-working-deployment.md
+server/package.json

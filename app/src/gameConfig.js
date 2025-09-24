@@ -31,7 +31,7 @@ const gameConfig = {
     "VERSION": version,
     "DOMAIN": _domain,
     "PORT": _port,
-    "USE_STUBS": process.env.REACT_APP_USE_STUBS === 'true' || false,
+    "USE_STUBS": process.env.REACT_APP_USE_STUBS === 'true' || (_domain === 'localhost'),
     "SERVER_URL": _server,
     "GET_URL": _server,
     "API_URL": (process.env.REACT_APP_API_URL || _server) + "/api",

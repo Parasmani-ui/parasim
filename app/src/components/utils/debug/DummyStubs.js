@@ -46,6 +46,16 @@ const stubs = {
         };
         return {rc: 'success', data: output};
     },
+
+    'website/site_data': (user, data) => {
+        // Return basic site configuration data
+        const siteData = [
+            { key: 'theme', value: 'default' },
+            { key: 'branding', value: 'parasim' },
+            { key: 'version', value: '1.0.0' }
+        ];
+        return {rc: 'success', data: siteData};
+    },
 };
 
 export const dummyCall = async (service, user, data) => {
